@@ -1,11 +1,11 @@
 /*
 Goldbach's Conjecture
-
-"Every even number greater than or equal to 4 can be expressed as the sum of two prime numbers."
-
-Verify Goldbach's conjecture as expressed by Euler for any even numbers less than a million submitted by user.
-
 Author: Chris Impastato
+
+Reads in a set of even numbers from 6 to 1000000
+For each number n it determines the two odd primes whose sum is n.
+Breaks ties by choosing the pair with the largest difference.
+It then outputs it in the form: n = a + b.
 */
 
 #include <stdio.h>
