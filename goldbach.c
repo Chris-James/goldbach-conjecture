@@ -23,15 +23,17 @@ int main() {
 
     int lo = 3;
     int hi = n - lo;
+    int found_primes = 0;
 
     while (lo <= hi) {
       if ( is_prime(lo) && is_prime(hi) ) {
-        printf("%d = %d + %d \n", n, lo, hi);
+        found_primes = 1;
         break;
       }
       lo += 2;
       hi = n - lo;
     }
+    found_primes ? printf("%d = %d + %d \n", n, lo, hi) : printf("Goldbach’s conjecture is wrong. \n");
     scanf("%d", &n);
   }
 
