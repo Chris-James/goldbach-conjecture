@@ -12,8 +12,34 @@ Author: Chris Impastato
 #include <stdlib.h>
 #include <math.h>
 
+int is_prime(int);
 
 int main(int argc, char * argv[]) {
 
   return 0;
+}
+
+int is_prime(int target) {
+  const int NOT_PRIME = 0;
+  const int PRIME = 1;
+
+  int bound = floor(sqrt(target));
+  int divisor = 3;
+
+  // First, check if the target is divisible by 2.
+  if (target % 2 == 0) {
+    return NOT_PRIME;
+  }
+
+  // Since we checked target's divisibility by 2 we no longer need to check even numbers.
+  // Use a loop to check all odd numbers greater than 2.
+  while (divisor <= bound) {
+    if (target % divisor == 0) {
+      return NOT_PRIME;
+    }
+    divisor += 2;
+  }
+
+  return PRIME;
+
 }
