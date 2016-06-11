@@ -14,19 +14,25 @@ Author: Chris Impastato
 
 int is_prime(int);
 
-int main(int argc, char * argv[]) {
+int main() {
 
-  int n = atoi(&argv[1][0]);
-  int lo = 3;
-  int hi = n - lo;
+  int n;
+  scanf("%d", &n);
 
-  while (lo <= hi) {
-    if ( is_prime(lo) && is_prime(hi) ) {
-      printf("%d = %d + %d \n", n, lo, hi);
-      break;
+  while (n != 0) {
+
+    int lo = 3;
+    int hi = n - lo;
+
+    while (lo <= hi) {
+      if ( is_prime(lo) && is_prime(hi) ) {
+        printf("%d = %d + %d \n", n, lo, hi);
+        break;
+      }
+      lo += 2;
+      hi = n - lo;
     }
-    lo += 2;
-    hi = n - lo;
+    scanf("%d", &n);
   }
 
   return 0;
