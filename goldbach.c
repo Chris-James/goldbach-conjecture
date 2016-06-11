@@ -16,6 +16,19 @@ int is_prime(int);
 
 int main(int argc, char * argv[]) {
 
+  int n = atoi(&argv[1][0]);
+  int lo = 3;
+  int hi = n - lo;
+
+  while (lo <= hi) {
+    if ( is_prime(lo) && is_prime(hi) ) {
+      printf("%d = %d + %d \n", n, lo, hi);
+      break;
+    }
+    lo += 2;
+    hi = n - lo;
+  }
+
   return 0;
 }
 
